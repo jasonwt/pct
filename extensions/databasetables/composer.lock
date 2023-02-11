@@ -1,0 +1,80 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "dc43608dae413fc33eb7bf77478cce39",
+    "packages": [
+        {
+            "name": "pct/core",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "/home/jasonwt/dev/php/packages/pct/core/",
+                "reference": "11ba7cc78973601f8b909d5b3a428347b09978b4"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "pct\\core\\": "src/"
+                },
+                "files": [
+                    "src/debugging/files/debugstring.inc.php",
+                    "src/debugging/files/debugprint.inc.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jason Thompson"
+                }
+            ],
+            "time": "2023-02-09T01:11:26+00:00"
+        },
+        {
+            "name": "pct/databaselink-extension",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "/home/jasonwt/dev/php/packages/pct/extensions/databaselink/",
+                "reference": "dca15cc45000d64af20041d6fe1c948cc8614348"
+            },
+            "require": {
+                "pct/core": "dev-master"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "pct\\extensions\\databaselink\\": "src/"
+                },
+                "files": []
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jason Thompson"
+                }
+            ],
+            "time": "2023-02-09T01:12:07+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "pct/core": 20,
+        "pct/databaselink-extension": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.2.0"
+}

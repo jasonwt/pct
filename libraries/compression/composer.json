@@ -1,0 +1,22 @@
+{
+	"name": "pct/compression-library",
+	"type": "library",
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"pct\\libraries\\compression\\": "src/"
+		},
+		"files": []
+	},
+	"authors": [
+		{
+			"name": "Jason Thompson"
+		}        
+	],
+	"repositories": [
+	],
+    "require": {        
+	},
+	"require-dev": {
+	}
+}

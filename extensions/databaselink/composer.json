@@ -1,0 +1,27 @@
+{
+	"name": "pct/databaselink-extension",
+	"type": "library",
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"pct\\extensions\\databaselink\\": "src/"
+		},
+		"files": []
+	},
+	"authors": [
+		{
+			"name": "Jason Thompson"
+		}        
+	],
+	"repositories": [
+        {
+            "type": "vcs",
+            "url": "/home/jasonwt/dev/php/packages/pct/core/"
+        }
+	],
+    "require": {
+        "pct/core": "dev-master"
+	},
+	"require-dev": {
+	}
+}

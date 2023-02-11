@@ -1,0 +1,50 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "49e7c833fcc4a69499c4b10583851464",
+    "packages": [
+        {
+            "name": "pct/core",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "/home/jasonwt/dev/php/packages/pct/core/",
+                "reference": "2762b74933fd48dd40e9dc5a84ef7d5c04bed1de"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "pct\\core\\": "src/"
+                },
+                "files": [
+                    "src/debugging/files/debugstring.inc.php",
+                    "src/debugging/files/debugprint.inc.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jason Thompson"
+                }
+            ],
+            "time": "2023-02-08T05:52:34+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "pct/core": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.2.0"
+}
