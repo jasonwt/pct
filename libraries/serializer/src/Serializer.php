@@ -124,7 +124,37 @@ array     : 111 RR RRR
 
 /*
 
+        VVVVVVV*: small unsigned int
+        EEEEBB*0: custom float
+        xxxxx*00: reserved
+        BBBS*000: int
+        BBB*0000: IEEE754 float
+        Nx*00000: string
+        V*000000: bool
+        *0000000: null
+
+
+        EEEEBBB*: float
+
+        VVVVV0*0: small array
+        VVVVV1*0: small array assoc
+
+        VBBBS*00: int
+
+        BBB0*000: large array
+        BBB1*000: large array assoc
         
+        xxxxxxx1: number
+
+        xxxxxx01: int
+
+        xxxS0010: int including value
+        xxxS1010: int including bytes
+
+        xxxxx110: float
+        xxxx0110: float including bytes
+        xxxx1110: float
+
         xxxxxxx1: array
 
         xxxxxx10: number
@@ -138,8 +168,8 @@ array     : 111 RR RRR
 
 
         xxxxxxx1: array
-        xxxBBS10: int
-        xxBBB100: float
+        xxxxxx10: int
+        xxxxx100: float
         xxxT1000: string
         xxT10000: bool
         xx100000: null
