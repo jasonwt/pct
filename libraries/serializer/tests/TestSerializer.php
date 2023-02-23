@@ -14,6 +14,39 @@
 
 
 
+
+
+
+
+    
+
+    $srcFile = "";
+
+    $dir = getcwd();
+
+    if ($dh = opendir($dir)) {
+        while (($file = readdir($dh)) !== false) {
+            if (filetype($dir . $file) != "file")
+                continue;
+
+            if ($file[0] == ".")
+                continue;
+
+            if (substr($file, 0, 6) != "gearup")
+                continue;
+
+            list ($dbName, $timeStamp, $sql) = explode(".", $file, 3);
+
+            echo "mysqladmin create -poiaw7jnt $dbName;\n";
+            //echo "GRANT ALL PRIVILEGES ON $dbName" . ".* TO 'gearup'@'localhost' IDENTIFIED BY 'mnhhr9#yds';\n"
+        }
+
+        closedir($dh);
+    }
+
+    exit();
+
+
     
 //    $value = "18446744073709551615";
 
