@@ -286,9 +286,11 @@ float result = (float) (mantissa * Math.pow(2, exponent)); // generate floating-
         }
 /*
 
-        xxxxxx10: number
+        VVVVVVV1: pos int 0 - 127        
         DDBBBS10: number
         BBBST100: number
+        BBBS0100: number int
+        BBBS1100: number float
 
 */
         static public function SerializeNumber($value) : string {
@@ -298,14 +300,43 @@ float result = (float) (mantissa * Math.pow(2, exponent)); // generate floating-
                 throw new \Exception();
             
             if ($getType == "integer" && $value >= 0 && $value <= 127) {
-                $packet = $value << 1;
+                $packetHeader = $value << 1;
 
-                return pack("C", BitWise::SetBits($packet, 0, 1, 1));
+                return pack("C", BitWise::SetBits($packetHeader, 0, 1, 1));
             }
 
-            
-
             $numberParts = explode(".", (string) abs($value));
+
+            $parts = [
+                "real" => [
+                    "value" => (int) $numberParts[0] ?? 0
+                ], 
+                "decimal" => [
+                    "value" => (int) $numberParts[1] ?? 0
+                ]
+            ];
+            
+            foreach ($parts as $k => &$v) {
+                $v["bits"] = ($v["value"] != "0" ? decbin($v["value"]) : "");
+                $v["bytes"] = ($v["value"] == 0 ? 0 : ceil(strlen($v["bits"]) / 8));
+                $v["packed"] = "";
+
+                if (($bits = $v["bits"]) == "")
+                    continue;
+                    
+                while ($bits != "") {
+                    $v["packed"] .= pack("C", bindec(substr($bits, -8)));
+                    $bits = (strlen($bits) <= 8 ? "" : substr($bits, 0, strlen($bits) - 8));
+                }
+            }
+
+            if ($parts["real"]["bits"] != "" && $parts["decimal"]["bits"] != "") {
+                
+            } else {
+
+            }
+
+            print_r($parts);
 
             $real = (int) $numberParts[0];
             $decimal = (int) ($numberParts[1] ?? 0);
@@ -314,11 +345,6 @@ float result = (float) (mantissa * Math.pow(2, exponent)); // generate floating-
             $realBits = decbin($real);
             $decimalBytes = (int) ($decimal == 0 ? 0 : ceil(strlen(decbin($decimal)) / 8));
             $decimalBits = decbin($decimal);
-            
-            echo "real         : $real [$realBits]\n";
-            echo "realBytes    : $realBytes [$realBytes]\n";
-            echo "decimal      : $decimal [$decimalBits]\n";
-            echo "decimalBytes : $decimalBytes [$decimalBytes]\n";
 
             $otherPackets = "";
 

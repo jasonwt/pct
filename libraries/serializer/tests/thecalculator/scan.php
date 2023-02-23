@@ -261,7 +261,7 @@
                         "in-command.com",
                         "www.in-command.com"
                     ];
-                    if (substr($serverName, - 11) == ".yakima.net" || substr($serverName, -14) == ".incommand.com" || substr($serverName, -15) == ".incommand.com") {
+                    if (substr($serverName, - 11) == ".yakima.net" || substr($serverName, -14) == ".incommand.com" || substr($serverName, -15) == ".in-command.com") {
                         $results["subdomains"][$serverName] = $addressParts[1];
                         echo "[" . $addressParts[1] . "] PREVIEW OR DEV SITE\n";
                     } else {
