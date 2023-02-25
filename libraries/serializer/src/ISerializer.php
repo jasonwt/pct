@@ -4,7 +4,7 @@
     namespace pct\libraries\serializer;
     
     interface ISerializer {
-        static public function Serialize($data) : string;
-        static public function Unserialize(string $data);
+        static public function Serialize($value) : ?string;
+        static public function Unserialize(string &$data);
     }
 ?>
