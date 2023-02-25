@@ -14,8 +14,13 @@
 		}        
 	],
 	"repositories": [
+        {
+            "type": "vcs",
+            "url": "/home/jasonwt/dev/php/packages/pct/libraries/serializer/"
+        }
 	],
-    "require": {        
+    "require": {
+        "pct/core": "dev-master"
 	},
 	"require-dev": {
 	}
